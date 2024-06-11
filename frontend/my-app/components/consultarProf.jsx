@@ -30,7 +30,7 @@ export default function ConsultarProfessor() {
         <Text style={styles.cabecalho}> Consultar Professor(a) </Text>
 
 
-        <Button title="Listar professor(a)" onPress={fetchProf} color={"#646C8E"} />
+        <Button title="Listar professor(a)" onPress={fetchProf} color={"#646C8E"} marginTop={70} />
 
         <Text style={styles.prof}> Nome dos Professores </Text>
 
@@ -38,7 +38,7 @@ export default function ConsultarProfessor() {
         data={professores} // Use the professores state variable
         keyExtractor={(item) => item.id_prof.toString()}
         renderItem={({ item }) => (
-          <ScrollView>
+          <ScrollView style={styles.id}>
             <Text>ID: {item.id_prof}</Text>
             <Text>Nome do Professor: {item.nome}</Text>
             <Text>Telefone: {item.telefone}</Text>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   },
 
   prof:{
+    backgroundColor: "#646C8E",
     color: "white",
     fontFamily: "Arial",
     fontSize: 20,
@@ -91,8 +92,8 @@ const styles = StyleSheet.create({
       
     },
 
-    button:{
-      
+    id: {
+      backgroundColor: "#646C8E",
     }
   },
 
