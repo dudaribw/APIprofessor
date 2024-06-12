@@ -3,37 +3,31 @@ import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, ScrollView, Button } from 'react-native';
 import { StatusBar } from 'react-native';
-import { Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 
 
 
 const HomeScreen = () => {
+
   const navigation = useNavigation();
 
   return (
+
     <ScrollView style={styles.tudo}>
-      <View style={styles.cabecalho}>
-        <Text style={styles.texto}>Onde está o professor?</Text>
-      </View>
+
 
       <View >
+        <StatusBar backgroundColor='#F18F01' />
 
         <View style={styles.fundo}>
-          <Image
-            source={require("../assets/professor.jpg")}
-            style={styles.imagem}
-          />
+
           <TouchableOpacity onPress={() => navigation.navigate('Professor')} style={styles.button}>
             <Text style={styles.buttontext}>Consulta de professores</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.fundo}>
-          <Image
-            source={require("../assets/salas.jpg")}
-            style={styles.imagem}
-          />
+
           <TouchableOpacity onPress={() => navigation.navigate('Sala')} style={styles.button}>
             <Text style={styles.buttontext}>Consulta de Salas</Text>
           </TouchableOpacity>
@@ -45,10 +39,7 @@ const HomeScreen = () => {
       <View >
 
         <View style={styles.fundo}>
-          <Image
-            source={require("../assets/alocacoes.png")}
-            style={styles.imagem}
-          />
+
           <TouchableOpacity onPress={() => navigation.navigate('Alocacao')} style={styles.button}>
             <Text style={styles.buttontext}>Consulta de Alocações</Text>
           </TouchableOpacity>
@@ -56,27 +47,26 @@ const HomeScreen = () => {
 
 
         <View style={styles.fundo}>
-          <Image
-            source={require("../assets/interrogacao.png")}
-            style={styles.imagem}
-          />
+
           <TouchableOpacity onPress={() => navigation.navigate('Visao')} style={styles.button}>
-            <Text style={styles.buttontext}>Consulta de visão de alocações</Text>
+            <Text style={styles.buttontext}>Consulta de Visão de alocações</Text>
           </TouchableOpacity>        </View>
       </View>
 
       <View style={styles.fundo}>
-          <Image
-            source={require("../assets/Grupo.jpeg")}
-            style={styles.imagem}
-          />
-          <TouchableOpacity onPress={() => navigation.navigate('Sobre')} style={styles.button}>
-            <Text style={styles.buttontext}>Integrantes do Grupo</Text>
-          </TouchableOpacity>        </View>
-      
+
+        <TouchableOpacity onPress={() => navigation.navigate('Sobre')} style={styles.button}>
+          <Text style={styles.buttontext}>Sobre Nós</Text>
+        </TouchableOpacity>        </View>
+
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>SENAI- SP Valinhos 2024 - Curso Desenvolvimento de Sistemas G2</Text>
+      </View>
 
 
-      <StatusBar style="auto" />
+
+
+
     </ScrollView>
   );
 };
@@ -100,7 +90,7 @@ const styles = StyleSheet.create({
 
   },
   tudo: {
-    backgroundColor: '#a0aecd'
+    backgroundColor: '#C3CBF1'
   },
 
   imagem: {
@@ -123,18 +113,37 @@ const styles = StyleSheet.create({
 
   button: {
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: '#646C8E',
     padding: 10,
     width: "50%",
-    border: "2px solid black",
+    height: '120%',
+    borderRadius: '5px'
   },
 
   buttontext: {
-    fontFamily: 'georgia',
+    fontFamily: 'Arial',
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
-  }
+  },
+
+  footer: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 839,
+    height: 50,
+    backgroundColor: '#646C8E',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  footerText: {
+    fontFamily: 'Arial',
+    fontSize: 16,
+    color: 'white',
+    fontWeight: 'bold',
+
+  },
 
 
 });
